@@ -3,6 +3,7 @@ import okhttp3.Request;
 import okhttp3.Response;
 
 import java.io.IOException;
+import java.util.logging.Logger;
 
 public class Test {
 
@@ -16,6 +17,7 @@ public class Test {
         } catch (IOException e) {
             e.printStackTrace();
         } catch (Exception e) {
+            System.out.println(e.getMessage());
             e.printStackTrace();
         }
 
