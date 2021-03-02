@@ -1,15 +1,15 @@
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
+import org.jetbrains.annotations.NotNull;
 
 import java.io.IOException;
-import java.util.logging.Logger;
 
 public class Test {
 
     static OkHttpClient client = new OkHttpClient();
 
-    public static void main(String[] args) {
+    public static void main() {
 
         try {
             String test = getFromUrl("https://example.com");
@@ -23,6 +23,7 @@ public class Test {
 
     }
 
+    @NotNull
     static String getFromUrl(String url) throws IOException {
         Request request = new Request.Builder()
                 .url(url)

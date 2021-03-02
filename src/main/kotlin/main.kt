@@ -12,4 +12,6 @@ fun main() {
 
     if (year > 2020)
         println("Ainda será lançado, de fato.")
+
+    Test.main()
 }
