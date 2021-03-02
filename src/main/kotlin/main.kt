@@ -1,17 +1,13 @@
 // (C) 2021 Feliphe Allef
+import com.beust.klaxon.Klaxon
 
 fun main() {
-    print("Digite o nome do filme: ")
-    val name = readLine()
-    print("Digite o ano de lançamento do filme: ")
-    val year = readLine()!!.toInt()
-    val film = Film(name)
-    film.releaseYear = year
 
-    println(film.filmName + " foi lançado em " + film.releaseYear)
+    class Data(val films: List<Film>)
+    val content = Test.getFromUrl("http://localhost:9000/catalog/films/all")
+    val result = Klaxon().parse<Data>(content)
 
-    if (year > 2020)
-        println("Ainda será lançado, de fato.")
-
-    Test.main()
+    for (film in result!!.films) {
+        println(film.title)
+    }
 }
